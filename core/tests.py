@@ -7,4 +7,4 @@ class HelloWorldAPITestCase(APITestCase):
         url = reverse('hello_world')
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, {"message": "hello-world"})
+        self.assertEqual(response.data, {'message': 'Hello World! Bạn đã xác thực thành công.'})

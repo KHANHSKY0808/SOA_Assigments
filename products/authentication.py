@@ -1,3 +1,4 @@
+import os
 import requests
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
@@ -27,7 +28,7 @@ class ExternalTokenAuthentication(BaseAuthentication):
 
         # 1. DÙNG 127.0.0.1 THAY VÌ localhost ĐỂ TRÁNH TIMEOUT TRÊN WINDOWS
         # 2. ĐÚNG PORT 8001 VÀ ENDPOINT /api/auth/ CỦA BÀI 2
-        auth_url = 'http://127.0.0.1:8001/api/auth/'
+        auth_url = os.environ.get('AUTH_SERVICE_URL', 'http://127.0.0.1:8001/api/auth/')
 
         try:
             # Gửi đúng format {"token": token} theo yêu cầu của verify_token_view

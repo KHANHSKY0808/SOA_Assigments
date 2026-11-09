@@ -16,4 +16,5 @@ urlpatterns = [
     path('api/', include('core.urls')),
     path('', include('orders.urls')),   # Dịch vụ Quản lý Đơn hàng (Orders & Order Items)
     path('', include('products.urls')), # Dịch vụ Quản lý Sản phẩm (Products)
+    path('', include('reports.urls')),  # Dịch vụ Báo cáo (Reports Service)
 ]

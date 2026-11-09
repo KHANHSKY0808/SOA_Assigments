@@ -7,4 +7,5 @@ urlpatterns = [
     path('hello/', hello_world_view, name='hello_world'),
     path('', include('products.urls')),
     path('', include('orders.urls')),
+    path('', include('reports.urls')),
 ]

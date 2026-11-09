@@ -1,17 +1,15 @@
 # Hướng dẫn Kiểm thử Dịch vụ Quản lý Đơn hàng (Order Service)
 
-## 1. Khởi chạy các Service theo mô hình SOA
+## 1. Khởi chạy các Service bằng Docker
 
-Trong kiến trúc SOA (Service-Oriented Architecture), các dịch vụ chạy độc lập trên các cổng khác nhau:
-
-- **Auth Service & Product Service**: Chạy trên cổng `8001` (hoặc `8000`)
-  ```powershell
-  python manage.py runserver 8001
-  ```
-- **Order Service (Dịch vụ Quản lý Đơn hàng)**: Chạy trên cổng `8002`
-  ```powershell
-  python manage.py runserver 8002
-  ```
+Khởi chạy cả 3 dịch vụ đồng thời qua Docker Compose:
+```powershell
+docker compose up --build
+```
+Hệ thống sẽ chạy:
+- **Auth & Product Service**: Cổng `8001` (`http://localhost:8001/`)
+- **Order Service**: Cổng `8002` (`http://localhost:8002/`)
+- **Report Service**: Cổng `8003` (`http://localhost:8003/`)
 
 ---
 
